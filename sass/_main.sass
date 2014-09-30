@@ -152,60 +152,9 @@ header
   display: none
   height: 60px
   +box
-  background: rgba(#13133b, 0.8)
+  background: rgba(#000, 0.8)
   .top
     height: 0
-
-.photos
-  padding-top: 20px
-  +background-size(cover)
-  +box
-  +clr
-  padding-bottom: 40px
-  .photos_in
-    @extend %in
-    width: 865px
-    margin-top: 17px
-  .photo__item
-    position: relative
-    display: inline-block
-    width: 200px
-    height: 120px
-    vertical-align: top
-    margin-right: 15px
-    &:last-child
-      margin-right: 0
-    &:after
-      position: absolute
-      content: ""
-      top: 0
-      left: 0
-      right: 0
-      bottom: 0
-      border: 4px solid rgba(#fff, .3)
-    span
-      position: absolute
-      top: 0
-      left: 0
-      right: 0
-      bottom: 0
-      background: rgba(#000, .2)
-      +opacity(0)
-      +transition(background, .5s)
-      z-index: 1
-      &:after
-        position: absolute
-        content: ""
-        +s(zoom)
-        top: 50%
-        left: 50%
-        +transform(translate(-50%, -50%))
-      &:hover
-        +opacity(1)
-
-    img
-      display: block
-
 
 
 
@@ -345,62 +294,80 @@ header
       cursor: pointer
       +s(specs_next)
 
-.reviews
+.photos
+  padding-top: 20px
+  +background-size(cover)
+  +box
   +clr
-  padding-top: 55px
-  padding-bottom: 70px
-  h2
-    margin-bottom: 40px
-  .reviews_in
+  .photos_in
     @extend %in
-    +clr
-  .review__item
-    +background-clip(padding-box)
-    width: 300px
+    width: 865px
+    margin-top: 30px
+  .photo__item
     position: relative
     display: inline-block
-    margin-right: 42px
-    +background-clip(padding-box)
-    padding: 23px 18px
-    border: solid 2px #dbbd8b
-    +box
-    +clr
+    width: 270px
+    height: 180px
+    vertical-align: top
+    margin-right: 10px
     &:last-child
       margin-right: 0
     &:after
       position: absolute
       content: ""
-      bottom: -35px
-      left: 15px
-      +s(review_popup)
+      top: 0
+      left: 0
+      right: 0
+      bottom: 0
+      border: 2px solid rgba(#fff, .4)
+    span
+      position: absolute
+      top: 0
+      left: 0
+      right: 0
+      bottom: 0
+      background: rgba(#000, .2)
+      +opacity(0)
+      +transition(background, .5s)
+      z-index: 1
+      &:after
+        position: absolute
+        content: ""
+        +s(zoom)
+        top: 50%
+        left: 50%
+        +transform(translate(-50%, -50%))
+      &:hover
+        +opacity(1)
 
-    h3
-      color: #376482
-      font-size: 18px
-      +pfl
-      text-transform: uppercase
-      margin-bottom: 12px
-      font-weight: normal
-    p
-      +pfl
-      color: #5a5a5a
-      font-size: 16px
+    img
+      display: block
+
+.slick-prev, .slick-next
+  position: absolute
+  content: ""
+  top: 50%
+  left: -50px
+  +s(prev)
+.slick-next
+  +s(next)
+  right: -30px
+  left: auto
+
 
 
 .our
   background: url(../img/our_bg.jpg) center no-repeat
   +background-size(cover)
-  height: 500px
-  padding-top: 70px
+  height: 940px
+  padding-top: 140px
   position: relative
   +clr
   +box
   h2
-    color: #dcbe8c
-    font-size: 36px
   .our_in
     @extend %in
-    margin-top: 30px
+    margin-top: 65px
     position: relative
     +clr
   .our_left
@@ -415,6 +382,7 @@ header
       position: relative
       padding-left: 100px
       color: #ffffff
+      font-family: 'conv_pfdintextcondpro-light'
       &:before
         position: absolute
         content: ""
@@ -432,6 +400,7 @@ header
       display: table
       margin-bottom: 20px
       color: #ffffff
+      font-family: 'conv_pfdintextcondpro-light'
       .our_img
         float: left
         margin-right: 20px
@@ -440,14 +409,51 @@ header
         display: table-cell
         vertical-align: middle
         width: 200px
-  .our__shadow
-    position: absolute
-    background: url(../img/our_shadow.png) center center no-repeat
-    +background-size(cover)
-    height: 40px
-    bottom: -40px
-    left: 0
-    width: 100%
+
+
+.reviews
+  +clr
+  margin-top: -210px
+  padding-bottom: 70px
+  h2
+    margin-bottom: 40px
+  .reviews_in
+    @extend %in
+    +clr
+  .review__item
+    +background-clip(padding-box)
+    width: 300px
+    position: relative
+    display: inline-block
+    margin-right: 42px
+    +background-clip(padding-box)
+    padding: 23px 18px
+    border: solid 2px #ffffff
+    +box
+    +clr
+    &:last-child
+      margin-right: 0
+    &:after
+      position: absolute
+      content: ""
+      bottom: -42px
+      left: 15px
+      +s(review_popup)
+
+    h3
+      color: #ffffff
+      font-size: 24px
+      +cpr
+      text-transform: uppercase
+      margin-bottom: 12px
+      font-weight: normal
+    p
+      +pfl
+      color: #ffffff
+      font-size: 16px
+
+
+
 
 
 .order
@@ -471,25 +477,33 @@ header
     margin-right: 42px
     position: relative
     +box
+    &.last
+      background: #ffffff
+      .order__caption
+        color: #000000
+      .order__price
+        h3, span
+          color: #5a5a5a
+      .order__form
+        input
+          background: #ffffff
+          color: #000000
+          border-color: #bdbdbd
+          +placeholder
+            color: #787878 
     &:last-child
       margin-right: 0
   &__caption
-    background: url(../img/order-top_bg.png) no-repeat
-    width: 296px
-    height: 85px
-    position: absolute
-    top: 0
     font-size: 24px
     text-transform: uppercase
     color: #ffffff
-    padding-top: 20px
-    +box
+    +pfl
   &__img
     display: inline-block
     margin-bottom: 15px
-    margin-top: 80px
-    width: 180px
-    height: 280px
+    margin-top: 10px
+    width: 170px
+    height: 308px
     img
       display: block
   &__price
@@ -497,11 +511,10 @@ header
       +pfl
       font-size: 18px
       font-weight: normal
-      color: #8c8c8c
+      color: #bebebe
       span
         position: relative
-        color: #bea582
-        font-family: 'conv_pfdintextcondpro-lightital'
+        color: #bebebe
         &:after
           position: absolute
           content: ""
@@ -512,25 +525,10 @@ header
     h4
       position: relative
       color: #be0a0a
-      font-size: 48px
-      font-family: 'conv_pfdintextcondpro-thin'
+      font-size: 36px
+      font-family: 'code_proregular'
       font-weight: normal
-      &:before
-        position: absolute
-        content: ''
-        border-top: solid 2px #dbbd8b
-        top: 35px
-        left: 25px
-        right: 205px
-        height: 0
-      &:after
-        position: absolute
-        content: ''
-        border-top: solid 2px #dbbd8b
-        top: 35px
-        right: 25px
-        left: 205px
-        height: 0
+
 
       span
         font-size: 18px
@@ -540,7 +538,6 @@ header
     margin-top: 15px
     input
       width: 250px
-      border: 2px solid #dbdbdb
       margin-bottom: 10px
 
 
@@ -551,22 +548,22 @@ header
 
 
 .bottom
-  height: 880px
+  height: 855px
   @extend header
-  padding-top: 160px
-  background: url(../img/bottom_bg.jpg) center center no-repeat
-  +background-size(cover)
   .bottom__logo
     top: -130px
 
 
 footer
   box-sizing: border-box
-  height: 90px
-  @extend %in
+  background: #ffffff
+  height: 110px
   text-align: center
   padding-top: 15px
+  .footer_in
+    @extend %in
   p
+    font-family: 'conv_pfdintextcondpro-light'
     font-size: 16px
     color: #787878
     a
