@@ -209,57 +209,77 @@ header
 
 
 
-.history
-  padding-top: 60px
+.presentation
+  background: url(../img/presentation_bg.png) center center no-repeat
+  +background-size(cover)
+  height: 840px
+  padding-top: 10px
   +box
   +clr
 
-  h3
-    color: #5a5a5a
-    font-size: 36px
-  .history_in
+
+  .presentation_in
     @extend %in
     width: 1000px
     padding-top: 50px
     +clr
-  .history__block
+  .presentation__block
     margin-top: -10px
     +clr
-    .history__block--right
+    .presentation__block--right
       float: right
-      width: 550px
+      width: 625px
+      margin-top: 100px
       +clr
+      h3
+        font-size: 24px
+        color: #ffffff
+        +cpr
       p
-        font-size: 16px
-        margin-bottom: 28px
-        color: #1a1a1a
+        +pfl
+        font-size: 18px
+        margin-top: 12px
+        color: #ffffff
 
-    .history__block--left
+    .presentation__block--left
       float: left
-      width: 450px
+      width: 320px
       +clr
-      .history__img
+      .presentation__img
         position: relative
         display: block
-        width: 450px
-        height: 355px
-        margin-top: -30px
-        margin-left: -20px
-
+        width: 320px
+        height: 455px
         +clr
+        z-index: 1
+        &:hover
+          .button--presentation
+            +box-shadow(inset 0 0 5px 2px red)
         img
           display: block
+        .button--presentation
+          position: absolute
+          bottom: 25px
+          right: -180px
+          z-index: -1
+          +box
+          padding-left: 40px
+
+          i
+            +s(video_ico)
+            position: absolute
+            content: ""
+            top: 10px
+            left: 54px
+
 
 
 .specs
-  background: #000
   +clr
   +box
-  padding-top: 55px
+  margin-top: -240px
   h2
-    font-size: 36px
     margin-bottom: 60px
-    color: #dcbe8c
   .specs_in
     @extend %in
     +clr
