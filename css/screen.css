@@ -184,7 +184,7 @@ header .header__main--main .header__right:after, .bottom .header__main--main .he
 .presentation .presentation__block .presentation__block--left .presentation__img .button--presentation { position: absolute; bottom: 25px; right: -180px; z-index: -1; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; padding-left: 40px; }
 .presentation .presentation__block .presentation__block--left .presentation__img .button--presentation i { background: url('../img/icons-s6a796a49df.png') 0 -420px no-repeat; width: 28px; height: 24px; position: absolute; content: ""; top: 10px; left: 54px; }
 
-.specs { *zoom: 1; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; margin-top: -240px; }
+.specs { *zoom: 1; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; margin-top: -150px; }
 .specs:after { content: " "; display: table; clear: both; }
 .specs h2 { margin-bottom: 60px; }
 .specs .specs_in { *zoom: 1; }
